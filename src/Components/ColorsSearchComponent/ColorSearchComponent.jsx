@@ -2,6 +2,7 @@ import {useState, useCallback} from 'react';
 import {getColorsByName} from './colorSearchData';
 import ColorCardList from '../ColorCardList/ColorCardList';
 import styles from './colorSearchComponent.module.scss';
+import SearchInput from '../SearchInput/SearchInput';
 
 
 let searchTimer;
@@ -32,7 +33,7 @@ function Color(){
     return (
         <div className={styles.container}>
             <p className={styles.title}>Color Search</p>
-            <input className={styles.inputContent} placeholder='Search your color' value={colorText} onChange={searchColorHandle}/>
+            <SearchInput searchColorHandle={searchColorHandle} colorText={colorText}/>
             <ColorCardList colorsData={listOfColors} />
         </div>
     )
